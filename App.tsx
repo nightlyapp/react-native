@@ -4,7 +4,7 @@ import Header from './src/Components/HeaderComponent/Header';
 import { StyleSheet,View, Dimensions } from 'react-native';
 import * as Location from 'expo-location';
 import MapView, { PROVIDER_GOOGLE } from 'react-native-maps';
-import MapStyle from './src/Components/MapComponents/MapStyle'
+import MapStyle from './src/Components/MapComponents/MapStyle.json'
 export default function App() {
 
   const [Currentlocation, setLocation] = useState(null);
@@ -20,8 +20,8 @@ export default function App() {
       const location = await Location.getCurrentPositionAsync();
       const { latitude, longitude } = location.coords;
       setLocation({
-        latitude: latitude,
-        longitude: longitude,
+        latitude,
+        longitude,
         latitudeDelta: 0.0922,
         longitudeDelta: 0.0421,
 
